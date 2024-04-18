@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Run the AssettoServer binary
-#./AssettoServer
+./AssettoServer
 
 # Path to the log directory
 log_directory="/ac_server_directory/logs"
