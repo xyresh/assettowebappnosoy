@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mrayo Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('https://i.imgur.com/i3DdUL2.jpeg'); /* URL for the background image you can change it for something you like*/
+	    background-color: #ebeaea;
+            background-size: calc(100% + 8px); /* Adjust the size to zoom in (8px = 4px cropped from each side) */
+            background-position: center;
+            filter: blur(1px) brightness(67%); /* Adjust the brightness (88% = 12% darker) */
+
+        }
+
+        
+        header {
+            background: #3f3f3f; /* Header background color */
+            padding: 1px 0;
+            text-align: center;
+            box-shadow: 8px 8px 16px #1a1a1a, -8px -8px 16px #292929; /*  shadow */
+        }
+
+
+        .container {
+            width: 40%;
+            display: flex;
+            justify-content: center; /* Center the content horizontally */
+        }
+
+        /* "Window" container around the links */
+        .window {
+            border-radius: 12px;
+            background-color: #e5e5e5;
+            box-shadow: 6px 6px 12px #1a1a1a, -6px -6px 12px #292929; /*  shadow for the "window" */
+            padding: 10px; /* Padding for the "window" */
+            width: 100%; /* 100% width relative to the parent container */
+            max-width: 40%; /* Maximum width of 40% of the display */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        ul {
+            list-style: none;
+            padding-top: 20px;
+            padding-left: 45px;
+            width: 100%;
+            margin: 0;
+            align-items: center;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left:45px;
+            width: 100%;
+            align-items: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: 	#ebeaea;
+            display: inline-block;
+            text-align: center;
+            padding: 12px 20px;
+            border-radius: 8px;
+            background-color: #303030;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, padding 0.3s ease-in-out;*/
+            box-sizing: border-box;
+            box-shadow: 6px 6px 12px #a0a0a0, -6px -6px 12px #ebeaea; /*  shadow for buttons */
+            margin: 5px auto; /* Add margin for centering */
+        }
+	button {
+            text-decoration: none;
+            color:      #ebeaea;
+            display: inline-block;
+            text-align: center;
+            padding: 12px 20px;
+            border-radius: 8px;
+            background-color: #303030;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, padding 0.3s ease-in-out;*/
+            box-sizing: border-box;
+            box-shadow: 6px 6px 12px #a0a0a0, -6px -6px 12px #ebeaea; /*  shadow for buttons */
+            margin: 5px auto; /* Add margin for centering */
+        }
+        a:hover {
+            background-color: #fff;
+            color: #000;
+            padding: 15px 25px;
+        }
+        a:before {
+            content: '';
+            top: -3px;
+            left: -5px;
+            right: -5px;
+            bottom: -3px;
+            border-radius: px;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease-in-out;
+        }
+	button:hover {
+            background-color: #fff;
+            color: #000;
+            padding: 15px 25px;
+        }
+        button:before {
+            content: '';
+            top: -3px;
+            left: -5px;
+            right: -5px;
+            bottom: -3px;
+            border-radius: px;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease-in-out;
+        }
+        @media only screen and (max-width: 600px) {
+        .container {
+                width: 40%;
+            }
+            li {
+                font-size: 20px;
+                margin-bottom: 12px;
+            }
+            a {
+                padding: 14px 18px;
+                font-size: 20px;
+            }
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #303030; /* Set the link text color to white */
+            display: inline-block;
+            padding: 12px 20px; /* Larger padding for links */
+            border-radius: 9px;
+            background-color: #ebeaea   ; /* Set the default background color for links */
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, padding 0.3s ease-in-out; /* Transition effects */
+        }
+
+       	a:hover {
+            background-color: #fff; /* Change background color on hover */
+            color: #000; /* Change text color on hover */
+        }
+
+
+        button {
+            text-decoration: none;
+            color: #303030; /* Set the link text color to white */
+            display: inline-block;
+            padding: 12px 20px; /* Larger padding for links */
+            border-radius: 9px;
+            background-color: #ebeaea	; /* Set the default background color for links */
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, padding 0.3s ease-in-out; /* Transition effects */
+        }
+
+        button:hover {
+            background-color: #fff; /* Change background color on hover */
+            color: #000; /* Change text color on hover */
+        }
+
+	h3{
+	color: #000;
+	}
+	#logList {
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+<div class="background"></div>
+
+
+
+
+<header>
+    <h2>ASSETTO SERVER</h2>
+</header>
+
+<div class="container">
+        <div class="window"> <!-- "Window" container -->
+	<h3>Welcome to assetto Server, here are the services you may access from here:</h3>
+
+        <ul>
+            <br>
+		<!-- the link to your assetto corsa server using content manager-->
+            <li><a href="https://acstuff.ru/s/q:race/online/join?ip=130.61.51.249&httpPort=8081">assetto corsa server</a></li>
+		
+            <!-- Add more links as needed -->
+        </ul>
+	   <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Viewer</title>
+</head>
+<body>
+    <h3>lap times</h3>
+    <ul id="logList">
+        <!-- Log entries will be added here -->
+
+        <!-- STOP HERE -->
+
+    </ul>
+</ul>
+</body>
+</html> 
+	    </div>
+</div>
+
+
+
+</body>
+</html>
